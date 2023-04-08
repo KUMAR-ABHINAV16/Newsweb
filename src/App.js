@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
+import Navbar from './Components/Navbar';
+import NewsItem from './Components/NewsItem';
+import NewsList from './Components/NewsList';
+import SignInPage from './Components/SignInPage'
+import React,{useState} from 'react';
+// import ReactPaginate from 'react-paginate';
+
+
+function App({sign}) {
+  const [sign, setSign] = useState(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+    {
+      sign ? ( <NewsList />  ) : ( <SignInPage  />)
+    }
+    </>
   );
 }
 
 export default App;
+
+
+
+
